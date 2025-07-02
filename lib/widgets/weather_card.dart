@@ -22,7 +22,7 @@ class WeatherCard extends StatelessWidget {
           errorBuilder: (context, error, stackTrace) {
             // Image locale en cas d'erreur de chargement (CORS etc)
             return Image.asset(
-              'assets/images/default_weather.png',
+              'assets/images/default_weather.jpg',
               width: 50,
               height: 50,
             );

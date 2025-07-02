@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
+
 import 'themes/app_theme.dart';
+import 'screens/welcome_screen.dart';
 import 'screens/home_screen.dart';
 import 'services/weather_api.dart';
 import 'providers/weather_provider.dart';
@@ -22,7 +24,7 @@ class AppliMeteoFlutter extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) {
         final provider = WeatherProvider(WeatherApi(apiKey: apiKey));
-        provider.loadCities(['Dakar', 'Paris', 'Tokyo', 'New York']);
+        provider.loadCities(['Dakar', 'Paris', 'Tokyo', 'New York', 'Conakry']);
         return provider;
       },
       child: MaterialApp(
@@ -31,7 +33,7 @@ class AppliMeteoFlutter extends StatelessWidget {
         darkTheme: darkThemeData,
         themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
-        home: const HomeScreen(),
+        home: const WelcomeScreen(),
       ),
     );
   }
